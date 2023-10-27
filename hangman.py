@@ -11,6 +11,10 @@ while "_" in display and lives > 0:
     guess = input("Guess a letter: ").lower()
     was_found = False
 
+    if(guess in display):
+        lives-=1
+        print(f"You already guessed letter {guess}. You lose a live")
+    
     for i in range(0, len(chosen_word)):
         if chosen_word[i] == guess:
             display[i] = guess
